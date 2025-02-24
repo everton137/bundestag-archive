@@ -3,6 +3,9 @@ from urllib.parse import urlencode
 import json
 from pathlib import Path
 import time
+from dotenv import load_dotenv
+import os
+
 
 #    https://dip.bundestag.de/erweiterte-suche?f.wahlperiode=20&f.typ=Dokument&f.vorgangstyp_p=01Antr%C3%A4ge&f.urheber_p=05BT-Fraktionen%2FGruppen&f.urheber_p=05BT-Fraktionen%2FGruppen~Fraktion%20der%20AfD&f.datum.start=2023-01-01&f.datum.end=2023-12-31&rows=100
 #   https://dip.bundestag.de/erweiterte-suche?f.wahlperiode=20&f.urheber_p=05BT-Fraktionen%2FGruppen&f.urheber_p=05BT-Fraktionen%2FGruppen~Fraktion%20der%20AfD&f.datum.start=2023-01-01&f.datum.end=2023-12-31&rows=100
