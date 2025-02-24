@@ -7,6 +7,8 @@ import time
 #    https://dip.bundestag.de/erweiterte-suche?f.wahlperiode=20&f.typ=Dokument&f.vorgangstyp_p=01Antr%C3%A4ge&f.urheber_p=05BT-Fraktionen%2FGruppen&f.urheber_p=05BT-Fraktionen%2FGruppen~Fraktion%20der%20AfD&f.datum.start=2023-01-01&f.datum.end=2023-12-31&rows=100
 #   https://dip.bundestag.de/erweiterte-suche?f.wahlperiode=20&f.urheber_p=05BT-Fraktionen%2FGruppen&f.urheber_p=05BT-Fraktionen%2FGruppen~Fraktion%20der%20AfD&f.datum.start=2023-01-01&f.datum.end=2023-12-31&rows=100
 # https://search.dip.bundestag.de/api/v1/aktivitaet?f.datum.start=2023-01-01&f.datum.end=2023-12-31&f.drucksachetyp=Antrag&f.urheber=Bundesregierung&f.vorgangstyp=Gesetzgebung&f.vorgangstyp_notation=100&format=json&apikey=I9FKdCn.hbfefNWCY336dL6x62vfwNKpoN2RZ1gp21
+# Load environment variables from .env file
+load_dotenv()
 
 class BundestagAPIClient:
     def __init__(self, api_key):
@@ -82,8 +84,7 @@ class BundestagAPIClient:
         return None
 
 def main():
-    api_key = "I9FKdCn.hbfefNWCY336dL6x62vfwNKpoN2RZ1gp21"
-    
+    api_key = os.getenv("API_KEY")
     output_dir = Path("downloaded_pdfs")
     output_dir.mkdir(exist_ok=True)
     
